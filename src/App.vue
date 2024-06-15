@@ -1,16 +1,16 @@
 
 <template>
      <!--  <Login/>  -->
-    <!--  <TodoList/> -->
-     <!-- <Timer /> -->
-      <GitSearch />
+      <TodoList/> 
+      <Timer /> 
+      <GitSearch /> 
 </template>
 
 <script setup lang="ts">
 
 //import Login from "./views/Login.vue"
-//import TodoList from "./components/TodoList.vue"
-//import Timer from "./components/Timer.vue"
+import TodoList from "./components/TodoList.vue"
+import Timer from "./components/Timer.vue"
 import GitSearch from "./components/GitSearch.vue"
 
 </script>
