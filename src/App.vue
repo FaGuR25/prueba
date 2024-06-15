@@ -1,22 +1,9 @@
-
 <template>
-       <Login/>  
-     <!-- <TodoList/> -->
-     <!-- <Timer /> -->
-     <!-- <GitSearch /> -->
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
-
-import Login from "./views/Login.vue"
-//import TodoList from "./components/TodoList.vue"
-//import Timer from "./components/Timer.vue"
-//import GitSearch from "./components/GitSearch.vue"
-
 </script>
-
-
-
 
 <style>
 #app {
