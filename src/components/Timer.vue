@@ -1,7 +1,7 @@
 <template>
   <div id="timer">
     <div>
-      <label for="time">Establecer Tiempo:</label>
+      <h1 for="time">Establecer Tiempo:</h1>
       <input type="text" v-model="timeInput" id="time" placeholder="00:00:00" />
       <button  @click="setDuration">Guardar</button>
     </div>
@@ -76,11 +76,10 @@ export default {
   align-items: center;
 }
 
-label{
-  font-size: 28px;
+h1{
+  font-size: 50px;
   font-family: monospace;
   margin-bottom: 30px;
-
 }
 
 button {
@@ -97,7 +96,7 @@ button {
 }
 
 input {
-  width: 80%;
+  width: 78%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;

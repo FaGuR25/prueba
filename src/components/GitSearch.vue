@@ -120,6 +120,7 @@ export default {
 
 .textSearch {
   font-size: 50px;
+  font-family: monospace;
 }
 
 .conteiner {
@@ -140,6 +141,7 @@ export default {
   height: 43px;
   width: 100px;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .back {
