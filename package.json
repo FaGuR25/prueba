@@ -13,9 +13,10 @@
   "dependencies": {
     "@oruga-ui/oruga-next": "^0.8.11",
     "axios": "^1.7.2",
+    "crypto-js": "^4.2.0",
     "md5": "^2.3.0",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",

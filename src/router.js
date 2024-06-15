@@ -1,19 +1,36 @@
-import Vue from "vue";
-import Router from "vue-router";
-
-import App from "./App";
-import Home from "./views/Home";
-import Login from "./views/Login";
-import Register from "./views/Register";
-
-Vue.use(Router);
+import { createRouter, createWebHistory } from 'vue-router';
+import Login from './views/Login.vue';
+import Timer from './components/Timer.vue';
+import GitSearch from './components/GitSearch.vue';
+import TodoList from './components/TodoList.vue';
 
 const routes = [
-  { path: "/", component: Home },
-  { path: "/login", component: Login },
-  { path: "/register", component: Register },
-];
+  {
+    path: '/',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/timer',
+    name: 'Timer',
+    component: Timer, 
+  },
+  {
+    path: '/gitSearch',
+    name: 'GitSearch',
+    component: GitSearch, 
+  },
+  {
+    path: '/todoList',
+    name: 'TodoList',
+    component: TodoList, 
+  },
 
-const router = new Router({
+  
+];
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
+
+export default router;

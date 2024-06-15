@@ -1,121 +1,96 @@
 <template>
-  <div class="login">
-    <h1 class="title">Login</h1>
-    <form action class="form" @submit.prevent="login">
-      <label class="form-label" for="email">Email:</label>
-      <input v-model="email" class="form-input" type="email" id="email" required placeholder="Email" />
-      <label class="form-label" for="password">Password:</label>
-      <input v-model="password" class="form-input" type="password" id="password" required placeholder="Password" />
-      <p v-if="error" class="error">
-        Has introducido mal el email o la contraseña.
-      </p>
-      <input class="form-submit" type="submit" value="Login" />
-    </form>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form @submit.prevent="handleLogin">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" v-model="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import md5 from 'md5';
+import CryptoJS from 'crypto-js';
 
 export default {
   data() {
     return {
-      email: "",
-      password: "",
-      error: false,
+      username: '',
+      password: '',
     };
   },
   methods: {
-    async login() {
-      try {
-        const response = await axios.get('https://mocki.io/v1/083c59b8-9c04-4a37-bd75-35173f805854');
-        const { user, pass } = response.data;
-
-        if (this.email === user && md5(this.password) === pass) {
-          document.cookie = "loginSuccess=true; path=/";
-          this.$router.push({ name: 'Timer' }); 
-        } else {
-          this.error = true;
-        }
-      } catch (err) {
-        console.error(err);
-        this.error = true;
-      }
+    handleLogin() {
+      fetch("https://mocki.io/v1/083c59b8-9c04-4a37-bd75-35173f805854")
+        .then(response => response.json())
+        .then(result => {
+          const hashedPassword = CryptoJS.MD5(this.password).toString();
+          if (result.user === this.username && result.pass === hashedPassword) {
+            document.cookie = "loginSuccess=true; path=/";
+            alert("Login successful!");
+            this.$router.push({ name: 'Timer' }); 
+          } else {
+            alert("Invalid username or password");
+          }
+        })
+        .catch(error => console.error('Error:', error));
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.login {
+<style scoped>
+.login-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 2rem;
+  background-color: #f0f2f5;
 }
 
-.title {
+.login-box {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   text-align: center;
 }
 
-.form {
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 20%;
-  min-width: 350px;
-  max-width: 100%;
-  background: rgba(19, 35, 47, 0.9);
-  border-radius: 5px;
-  padding: 40px;
-  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
+.form-group {
+  margin-bottom: 15px;
 }
 
-.form-label {
-  margin-top: 2rem;
-  color: white;
-  margin-bottom: 0.5rem;
-
-  &:first-of-type {
-    margin-top: 0rem;
-  }
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.form-input {
-  padding: 10px 15px;
-  background: none;
-  background-image: none;
-  border: 1px solid white;
-  color: white;
-  justify-content: center;
-
-  &:focus {
-    outline: 0;
-    border-color: #1ab188;
-  }
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
-.form-submit {
-  background: #1ab188;
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
   border: none;
   color: white;
-  margin-top: 3rem;
-  padding: 1rem 0;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s;
-
-  &:hover {
-    background: #0b9185;
-  }
 }
 
-.error {
-  color: red;
-  margin-top: 1rem;
-  text-align: center;
+button:hover {
+  background-color: #0056b3;
 }
 </style>
