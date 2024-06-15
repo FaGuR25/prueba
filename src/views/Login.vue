@@ -2,10 +2,10 @@
   <div class="login">
     <h1 class="title">Login</h1>
     <form action class="form" @submit.prevent="login">
-      <label class="form-label" for="#email">Email:</label>
+      <label class="form-label" for="email">Email:</label>
       <input v-model="email" class="form-input" type="email" id="email" required placeholder="Email" />
-      <label class="form-label" for="#password">Password:</label>
-      <input v-model="password" class="form-input" type="password" id="password" placeholder="Password" />
+      <label class="form-label" for="password">Password:</label>
+      <input v-model="password" class="form-input" type="password" id="password" required placeholder="Password" />
       <p v-if="error" class="error">
         Has introducido mal el email o la contraseña.
       </p>
@@ -15,22 +15,33 @@
 </template>
 
 <script>
-
-
-
-
-
+import axios from 'axios';
+import md5 from 'md5';
 
 export default {
-  data: () => ({
-    email: "",
-    password: "",
-    error: false,
-  }),
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: false,
+    };
+  },
   methods: {
-    login() {
-      console.log(this.email);
-      console.log(this.password);
+    async login() {
+      try {
+        const response = await axios.get('https://mocki.io/v1/083c59b8-9c04-4a37-bd75-35173f805854');
+        const { user, pass } = response.data;
+
+        if (this.email === user && md5(this.password) === pass) {
+          document.cookie = "loginSuccess=true; path=/";
+          this.$router.push({ name: 'Timer' }); 
+        } else {
+          this.error = true;
+        }
+      } catch (err) {
+        console.error(err);
+        this.error = true;
+      }
     },
   },
 };
@@ -100,5 +111,11 @@ export default {
   &:hover {
     background: #0b9185;
   }
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+  text-align: center;
 }
 </style>
