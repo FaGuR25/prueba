@@ -24,9 +24,9 @@
 
     <div v-if="selectedUser" class="user-details">
       <h2>{{ selectedUser.login }}</h2>
-      <img :src="selectedUser.avatar_url" alt="Avatar" width="100" height="100" />
+      <img class="imgBio" :src="selectedUser.avatar_url" alt="Avatar" width="100" height="100" />
       <p><strong>Nombre:</strong> {{ selectedUser.name }}</p>
-      <p><strong>Bio:</strong> {{ selectedUser.bio }}</p>
+      <p><strong>Informacion:</strong> {{ selectedUser.bio }}</p>
       <p><strong>Repositorios:</strong> {{ selectedUser.public_repos }}</p>
       <p><strong>Seguidores:</strong> {{ selectedUser.followers }}</p>
       <p><strong>Siguiendo:</strong> {{ selectedUser.following }}</p>
@@ -114,7 +114,8 @@ export default {
   box-sizing: border-box;
   font-family: monospace;
   background-color: #fbfdfc;
-
+  border-radius: 5px;
+  
 }
 
 .textSearch {
@@ -198,12 +199,18 @@ li img {
 }
 
 .user-details {
-  margin-top: 20px;
+  margin-top: 30px;
+  font-size: 20px;
+
 }
 
 .pagination {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+.imgBio{
+  border-radius: 20px;
 }
 </style>
