@@ -124,10 +124,15 @@ export default {
 }
 
 .conteiner {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 300px;
+  max-width: 400px;
+  width: 100%;
   text-align: center;
+  margin: auto; 
+
 }
 
 
