@@ -1,15 +1,15 @@
 <template>
-  <div class="login-container">
+  <div class="container">
     <div class="login-box">
       <h2>Login</h2>
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" v-model="username" required />
+          <input type="text" id="username" v-model="username" required  placeholder="user">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" v-model="password" required />
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" v-model="password" required placeholder="contraseña"/>
         </div>
         <button type="submit">Login</button>
       </form>
@@ -36,7 +36,7 @@ export default {
           if (result.user === this.username && result.pass === hashedPassword) {
             document.cookie = "loginSuccess=true; path=/";
             alert("Login successful!");
-            this.$router.push({ name: 'Timer' }); 
+            this.$router.push({ name: 'GitSearch' }); 
           } else {
             alert("Invalid username or password");
           }
@@ -48,46 +48,64 @@ export default {
 </script>
 
 <style scoped>
-.login-container {
+
+h2{
+  font-size: 35px;
+}
+
+input{
+  font-size: 14px;
+}
+
+label{
+  font-size: 18px;
+  
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f2f5;
+  margin: auto;
+  background-color: #becee7;
+  margin: 40px 200px 40px 200px;
+
 }
 
 .login-box {
-  width: 300px;
+  width: 600px;
+  height: 370px;
   padding: 20px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
+  font-family: monospace;
 }
 
 .form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
+
+ 
 }
 
 button {
+  margin-top: 35px;
   width: 100%;
   padding: 10px;
   background-color: #007bff;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 4px;
   cursor: pointer;
+  border-radius: 12px;
+ 
 }
 
 button:hover {
