@@ -5,11 +5,11 @@
       <form @submit.prevent="handleLogin">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" v-model="username" required  placeholder="user">
+          <input type="text" id="username" v-model="username" required />
         </div>
         <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" v-model="password" required placeholder="contraseña"/>
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model="password" required />
         </div>
         <button type="submit">Login</button>
       </form>
@@ -49,19 +49,6 @@ export default {
 
 <style scoped>
 
-h2{
-  font-size: 35px;
-}
-
-input{
-  font-size: 14px;
-}
-
-label{
-  font-size: 18px;
-  
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -74,25 +61,27 @@ label{
 
 .login-box {
   width: 600px;
-  height: 370px;
+  height: 400px;
   padding: 20px;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   text-align: center;
-  font-family: monospace;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-
- 
 }
 
 button {
@@ -105,7 +94,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
   border-radius: 12px;
- 
 }
 
 button:hover {

@@ -2,7 +2,7 @@
   <div class="conteiner">
     <h1 class="textSearch">Buscar Perfiles en GitHub</h1>
     <input class="SearchUser" v-model="query" @keyup.enter="searchUsers" placeholder="Buscar perfiles..." />
-    <button class="SearchButton" @click="searchUsers">Buscar</button>
+    <button class="SearchButton"  @click="searchUsers">Buscar</button>
 
     <div v-if="error" class="error">{{ error }}</div>
     <div v-if="loading" class="loading"></div>
@@ -108,7 +108,7 @@ export default {
 
 <style>
 .SearchUser {
-  width: 80%;
+  width: 70%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -119,12 +119,12 @@ export default {
 }
 
 .textSearch {
-  font-size: 50px;
+  font-size: 40px;
   font-family: monospace;
 }
 
 .conteiner {
-  background-color: #fff;
+  background-color: #fcfcfc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 300px;
@@ -138,37 +138,52 @@ export default {
 
 .SearchButton {
   border-radius: 5px;
-  background-color: lightcyan;
+  background-color: #007bff;
   border-style: 1px;
   border-color: lightblue;
   margin-left: 5px;
   font-family: monospace;
   height: 43px;
   width: 100px;
-  font-size: 22px;
+  font-size: 18px;
   cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.SearchButton:hover{
+  background-color: #0056b3;
 }
 
 .back {
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 16px;
   width: 100px;
   height: 40px;
-  background-color: lightcyan;
+  background-color: #007bff;
   border-style: 1px;
   border-color: lightblue;
+  color: rgb(255, 255, 255);
 
+}
+
+.back:hover{
+  background-color: #0056b3;
 }
 
 .next {
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 16px;
   width: 100px;
   height: 40px;
-  background-color: lightcyan;
+  background-color:  #007bff;
   border-style: 1px;
   border-color: lightblue;
+  color: rgb(255, 255, 255);
 
+}
+
+.next:hover{
+  background-color: #0056b3;
 }
 
 .error {
@@ -183,6 +198,7 @@ export default {
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
+  margin-top: 30px;
   animation: rotation 1s linear infinite;
 }
 
@@ -207,7 +223,8 @@ li img {
 
 .user-details {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 16px;
+  margin-top: 60px;
 
 }
 
@@ -219,5 +236,6 @@ li img {
 
 .imgBio{
   border-radius: 20px;
+  
 }
 </style>

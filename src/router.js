@@ -3,6 +3,7 @@ import Login from './views/Login.vue';
 import Timer from './components/Timer.vue';
 import GitSearch from './components/GitSearch.vue';
 import TodoList from './components/TodoList.vue';
+import Home from './components/Home.vue';
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     name: 'TodoList',
     component: TodoList, 
   },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home, 
+  },
+
 
   
 ];
