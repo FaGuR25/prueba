@@ -107,6 +107,11 @@ export default {
 </script>
 
 <style>
+
+body{
+  background-color:rgb(6, 105, 204);
+}
+
 .SearchUser {
   width: 70%;
   padding: 12px 20px;

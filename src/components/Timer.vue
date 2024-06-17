@@ -70,8 +70,7 @@ export default {
 </script>
 
 <style>
-
-.timer {
+#timer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +93,8 @@ h1{
 
 button {
   border-radius: 5px;
-  background-color: rgb(15, 160, 227);
+  background-color: #007bff;
+
   margin-left: 5px;
   font-family: monospace;
   height: 43px;

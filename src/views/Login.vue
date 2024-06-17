@@ -36,7 +36,7 @@ export default {
           if (result.user === this.username && result.pass === hashedPassword) {
             document.cookie = "loginSuccess=true; path=/";
             alert("Login successful!");
-            this.$router.push({ name: 'GitSearch' }); 
+            this.$router.push({ name: 'Home' }); 
           } else {
             alert("Invalid username or password");
           }
