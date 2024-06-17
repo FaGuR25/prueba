@@ -70,7 +70,8 @@ export default {
 </script>
 
 <style>
-#timer {
+
+.timer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,15 +94,17 @@ h1{
 
 button {
   border-radius: 5px;
-  background-color: lightcyan;
-  border-style: 1px;
-  border-color: lightblue;
+  background-color: rgb(15, 160, 227);
   margin-left: 5px;
   font-family: monospace;
   height: 43px;
   width: 100px;
   font-size: 19px;
   margin-bottom: 10px;
+}
+
+button:hover{
+  background-color: blue;
 }
 
 input {

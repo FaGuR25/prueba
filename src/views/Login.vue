@@ -35,7 +35,7 @@ export default {
           const hashedPassword = CryptoJS.MD5(this.password).toString();
           if (result.user === this.username && result.pass === hashedPassword) {
             document.cookie = "loginSuccess=true; path=/";
-            alert("Login successful! Bienvenido");
+            alert("Login successful!");
             this.$router.push({ name: 'GitSearch' }); 
           } else {
             alert("Invalid username or password");
@@ -91,7 +91,7 @@ button {
   margin-top: 20px;
   width: 100%;
   padding: 10px;
-  background-color: #1091db;
+  background-color: #30a4ca;
   border: none;
   color: #fff;
   border-radius: 4px;
@@ -100,14 +100,14 @@ button {
 }
 
 button:hover {
-  background-color: #01257D;
+  background-color: #zz;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; 
+  background-color: #330000; 
 }
 
 </style>
