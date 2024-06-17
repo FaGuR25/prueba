@@ -1,7 +1,7 @@
 <template>
   <div class="conteiner">
     <h1 class="textSearch">Buscar Perfiles en GitHub</h1>
-    <input class="SearchUser" v-model="query" @keyup.enter="searchUsers" placeholder="Buscar perfiles..." />
+    <input class="SearchUser" v-model="query" @keyup.enter="searchUsers" placeholder="Escribir perfil..." />
     <button class="SearchButton"  @click="searchUsers">Buscar</button>
 
     <div v-if="error" class="error">{{ error }}</div>

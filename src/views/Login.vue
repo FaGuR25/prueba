@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="login-box">
-      <h2>Login</h2>
+      <h1>Login</h1>
       <form @submit.prevent="handleLogin">
-        <div class="form-group">
-          <label for="username">Username</label>
+        <div class="camps">
+          <label for="username">Usuario</label>
           <input type="text" id="username" v-model="username" required />
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
+        <div class="camps">
+          <label for="password">Contraseña</label>
           <input type="password" id="password" v-model="password" required />
         </div>
         <button type="submit">Login</button>
@@ -35,7 +35,7 @@ export default {
           const hashedPassword = CryptoJS.MD5(this.password).toString();
           if (result.user === this.username && result.pass === hashedPassword) {
             document.cookie = "loginSuccess=true; path=/";
-            alert("Login successful!");
+            alert("Login successful! Bienvenido");
             this.$router.push({ name: 'GitSearch' }); 
           } else {
             alert("Invalid username or password");
@@ -47,15 +47,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  background-color: #becee7;
-  margin: 40px 200px 40px 200px;
+  background-color: #96C2DB;
+  margin: 0px 200px 0px 200px;
+  
 
 }
 
@@ -69,34 +70,44 @@ export default {
   text-align: center;
 }
 
-.form-group {
+.camps {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.camps label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
 }
 
-.form-group input {
+.camps input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
 }
 
 button {
-  margin-top: 35px;
+  margin-top: 20px;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #1091db;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #fff;
   border-radius: 4px;
   cursor: pointer;
-  border-radius: 12px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #01257D;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; 
+}
+
 </style>
