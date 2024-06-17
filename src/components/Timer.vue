@@ -40,7 +40,7 @@ export default {
       this.$emit('duration-set', this.remainingTime);
     },
     startTimer() {
-      if (this.timer) return; // Si ya hay un temporizador en ejecución, no hacer nada
+      if (this.timer) return; 
       this.timer = setInterval(() => {
         if (this.remainingTime > 0) {
           this.remainingTime--;

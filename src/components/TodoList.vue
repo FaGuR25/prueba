@@ -72,7 +72,7 @@ export default {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px; /* Reducido para ajustar mejor */
+  padding: 20px; 
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -80,16 +80,16 @@ export default {
 }
 
 .label {
-  font-size: 24px; /* Ajustado para mejor legibilidad */
+  font-size: 24px; 
   font-family: monospace;
-  margin-bottom: 10px; /* Reducido para mejor espaciado */
+  margin-bottom: 10px; 
 }
 
 .input-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px; /* Reducido para mejor espaciado */
+  margin-bottom: 10px; 
 }
 
 .task-list {
@@ -102,7 +102,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc; /* Color ajustado para mejor contraste */
+  border-bottom: 1px solid #ccc; 
 }
 
 .task-checkbox {
@@ -117,7 +117,7 @@ export default {
 }
 
 .task-actions {
-  margin-left: auto; /* Para alinear los botones a la derecha */
+  margin-left: auto; 
 }
 
 .task-done-icon {
@@ -128,5 +128,13 @@ export default {
 .done .task-title {
   text-decoration: line-through;
   color: #999;
+}
+
+.edit-button{
+  background-color: white;
+}
+
+.delete-button{
+  background-color: white;
 }
 </style>
