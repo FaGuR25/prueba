@@ -131,27 +131,23 @@ export default {
   max-width: 400px;
   width: 100%;
   text-align: center;
-  margin: auto; 
+  margin: auto;
 
 }
-
 
 .SearchButton {
   border-radius: 5px;
   background-color: #007bff;
-  border-style: 1px;
-  border-color: lightblue;
   margin-left: 5px;
   font-family: monospace;
   height: 43px;
   width: 100px;
-  font-size: 18px;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
+  font-size: 19px;
+  margin-bottom: 10px;
 }
 
 .SearchButton:hover{
-  background-color: #0056b3;
+  background-color: blue;
 }
 
 .back {
@@ -167,7 +163,7 @@ export default {
 }
 
 .back:hover{
-  background-color: #0056b3;
+  background-color: blue
 }
 
 .next {
@@ -183,7 +179,7 @@ export default {
 }
 
 .next:hover{
-  background-color: #0056b3;
+  background-color: blue;
 }
 
 .error {

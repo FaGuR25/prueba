@@ -100,7 +100,7 @@ button {
 }
 
 button:hover {
-  background-color: #zz;
+  background-color: #30a4ca;
 }
 
 body {
