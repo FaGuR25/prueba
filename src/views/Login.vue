@@ -35,10 +35,10 @@ export default {
           const hashedPassword = CryptoJS.MD5(this.password).toString();
           if (result.user === this.username && result.pass === hashedPassword) {
             document.cookie = "loginSuccess=true; path=/";
-            alert("Login successful!");
+            alert("Bienvenido");
             this.$router.push({ name: 'Home' }); 
           } else {
-            alert("Invalid username or password");
+            alert("Contraseña o Usuario Invalidos");
           }
         })
         .catch(error => console.error('Error:', error));
